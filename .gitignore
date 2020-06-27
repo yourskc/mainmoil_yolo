@@ -1,0 +1,7 @@
+*.o
+*.out
+.vscode/
+mainmoil_yolo
+build/
+record/
+yolo-coco/yolov3.weights
