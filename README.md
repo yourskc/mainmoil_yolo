@@ -7,7 +7,7 @@ This is an OpenCV based MOIL application with YOLO real-time object detection.
 
 ## Demo Video
 
-[![Demo video](https://github.com/yourskc/mainmoil_yolo/blob/master/screenshot.png?raw=true)](https://www.youtube.com/watch?v=i3c43llwoFc)
+[![Demo video](https://github.com/yourskc/mainmoil_yolo/blob/master/Screenshot.png?raw=true)](https://www.youtube.com/watch?v=i3c43llwoFc)
 
 
 ## Requirements
