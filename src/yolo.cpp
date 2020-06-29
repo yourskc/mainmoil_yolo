@@ -1,10 +1,11 @@
 #include "yolo.h"
 #include "moildev.h"
-#define USE_GPU false
+#define USE_GPU true
 
 const std::string modelConfiguration = "../yolo-coco/yolov3.cfg";
 const std::string modelWeights = "../yolo-coco/yolov3.weights";
 const std::string classesFile = "../yolo-coco/coco.names";
+#define imageFilesFmt "../record/50/img%03d.jpg"
 
 void moil_yolo_images()
 {
@@ -37,7 +38,7 @@ void moil_yolo_images()
 
 	while (!isExit)
 	{
-		sprintf(filename, "../record/50/img%03d.jpg", numFrame);
+		sprintf(filename, imageFilesFmt, numFrame);
 		cout << filename << endl;
 		image_input = imread(filename);
 		if (image_input.empty())
