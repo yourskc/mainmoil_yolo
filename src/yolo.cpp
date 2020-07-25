@@ -1,7 +1,7 @@
 #include "yolo.h"
 #include "moildev.h"
 #define USE_GPU true
-
+// #define TEST_ORIGINAL
 const std::string modelConfiguration = "../yolo-coco/yolov3.cfg";
 const std::string modelWeights = "../yolo-coco/yolov3.weights";
 const std::string classesFile = "../yolo-coco/coco.names";
@@ -49,6 +49,12 @@ void moil_yolo_images()
 					   Size(640, 480));
 			cout << "process" << endl;
 			imshow("Input", image_input_s);
+#ifdef TEST_ORIGINAL
+				cv::resize(image_input, image_display[0],
+						   Size(1920, 1080));
+				detect_image(image_display[0]);
+				imshow("image_input", image_display[0]);
+#else
 			for (int i = 0; i < 6; i++)
 			{
 				remap(image_input, image_result[i], mapX[i], mapY[i], INTER_CUBIC,
@@ -58,10 +64,18 @@ void moil_yolo_images()
 				detect_image(image_display[i]);
 				imshow(Title[i], image_display[i]);				
 			}
+#endif
+
 		}
-		char c = waitKey(230);
-		if (c == 27)
+		char c = waitKey(200);
+		if (c == 27) // esc to quit
 			isExit = true;
+		else if(c == 32){ // space to pause
+			c = 0;
+			while (c != 32 && c!= 27) {
+				c = waitKey(200);			
+			}
+			}
 		numFrame += 1;
 	}
 	waitKey(0);
