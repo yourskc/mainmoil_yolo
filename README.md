@@ -18,14 +18,24 @@ cd moildev_install
 cd { your OpenCV major version and platform folder }
 sudo ./install.sh
 
-## yolo3.weights
+## Download yolo3.weights
+
+The weights file is not included in this repository, please download it by yourself.
 
 cd yolo-coco
 
 wget https://pjreddie.com/media/files/yolov3.weights
 
+## CUDA support
+
+The CUDA support is by default enabled, if you don't have CUDA, please disable it by remark the line in src/yolo.cpp
+ 
+// #define USE_GPU true
+
 ## How to compile?
+
 Provided with this repo is a CMakeLists.txt file, which you can use to directly compile the code as follows:
+
 ```bash
 mkdir build
 cd build
