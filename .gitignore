@@ -5,6 +5,3 @@ mainmoil_yolo
 build/
 record/
 yolo-coco/yolov3.weights
-!/dataset/
-/dataset/**
-!/dataset/01/
