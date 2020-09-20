@@ -5,7 +5,7 @@
 const std::string modelConfiguration = "../yolo-coco/yolov3.cfg";
 const std::string modelWeights = "../yolo-coco/yolov3.weights";
 const std::string classesFile = "../yolo-coco/coco.names";
-#define imageFilesFmt "../record/50/img%03d.jpg"
+#define imageFilesFmt "../dataset/01/img%03d.jpg"
 
 void moil_yolo_images()
 {

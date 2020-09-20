@@ -11,7 +11,12 @@ This is an OpenCV based MOIL application with YOLO real-time object detection.
 
 
 ## Requirements
+
 OpenCV 4.3.0 
+
+cd moildev_install
+cd { your OpenCV major version and platform folder }
+sudo ./install.sh
 
 ## yolo3.weights
 
